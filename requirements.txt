@@ -1,2 +1,3 @@
 jupyterlab
 flask
+gunicorn
