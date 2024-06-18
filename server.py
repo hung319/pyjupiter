@@ -1,7 +1,9 @@
 import os
+from jupyter_server.serverapp import ServerApp
 
-# Thay đổi thư mục làm việc hiện tại thành thư mục chứa tệp này
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
+# Đặt mật khẩu
+os.environ['JUPYTER_LAB_PASSWORD'] = os.getenv('PASSWORD', 'your_default_password')
 
-# Chạy JupyterLab
-os.system('jupyter lab')
+# Khởi động JupyterLab
+server = ServerApp()
+server.launch_instance()
